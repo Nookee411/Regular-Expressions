@@ -12,7 +12,7 @@ namespace Task1
 
         public static bool IsIP(this string s)
         {
-            Regex reg = new Regex(@"((25[0-5]|2[0-4]\d|[01]?\d\d?){3}\.)(25[0-5]|2[0-4]\d|[01]?\d\d?)");
+            Regex reg = new Regex(@"(((25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(25[0-5]|2[0-4]\d|[01]?\d\d?))$");
             return reg.IsMatch(s);
         }
 
@@ -24,7 +24,7 @@ namespace Task1
 
         public static bool IsURL(this string s)
         {
-            Regex reg = new Regex(@"(https?:\/\/)?(w{3}\.)?([A-Za-z1-9]){2,}\.[A-Za-z1-9]+([:]?\w{4})?((\/[A-Za-z1-9]*)*)\/?(#[A-Za-z1-9]*)?(\w*=\w*)?");
+            Regex reg = new Regex(@"^((https?):\/\/)?(www.)?(([A-Za-z][A-Za-z_-]{0,30}[A-Za-z])(.[a-z]{1,3})){1}(:\d{3,5})?(\/[a-zA-Z]*)*(\?(\w*=\w*)&?(\w*=\w*)*)?$");
             return reg.IsMatch(s);
         }
 
@@ -35,7 +35,7 @@ namespace Task1
         }
         public static bool IsPrice(this string s)
         {
-            Regex reg = new Regex(@"\d{1,}(\.\d{0,2})? ?р(уб)?\.?");
+            Regex reg = new Regex(@"^\d{1,}(\.\d{0,2})? ?р(уб)?\.?$");
             return reg.IsMatch(s);
         }
 
