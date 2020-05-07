@@ -38,11 +38,11 @@ namespace Task1
             else
                 Console.WriteLine(s + "\nS is not URL\n");
 
-            s = "29/02/2004";
+            s = "29/02/1900";
             if (s.IsCorrectDate())
                 Console.WriteLine(s + "\nS is correct date\n");
             else
-                Console.WriteLine(s + "\nS is correct not date\n");
+                Console.WriteLine(s + "\nS is not correct date\n");
 
             s = "23.782455435344645654645546р.";
             if (s.IsPrice())
